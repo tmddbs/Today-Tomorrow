@@ -63,13 +63,16 @@ pip install -r requirements.txt
 ## 프로젝트 구조
 
 
-- 이 프로젝트는 `.github`, `Today,Tomorrow`, `tests`, `todoist_api_python` 등의 파일들로 구성되어 있다. 
+- 이 프로젝트는 'main.py', 'models.py', 'forms.py', 'routes.py', 'templates/', 'static/', 'venv/' 등의 파일들로 구성되어 있다. 
 
-- `.github` : workflow 설정 파일들이 저장되는 폴더
-- `Today,Tomorrow` : 추가적으로 제작할 파일이 들어갈 폴더
-- `tests` :프로젝트의 단위 테스트 코드가 들어 있는 폴더
--  `todoist_api_python` : main 프로젝트 코드가 들어있는 폴더
--  
+- `main.py` :  Flask 애플리케이션을 생성하고, 라우트를 등록하며, 서버를 실행
+- `models.py` : 데이터베이스 모델을 정의, SQLAlchemy를 사
+- `forms.py` :웹 폼을 정의하는 파일, WTForms 라이브러리를 사용
+- `routes.py` : Flask 애플리케이션의 라우트를 정의하는 파일
+- `templates/` : HTML 템플릿 파일들이 위치
+- `static/` : 정적 파일들 (CSS, JavaScript, 이미지 등)이 위치하는 디렉토리
+- `venv/` : 가상 환경 디렉토리
+
 <br>
 
 ## 피드백
@@ -77,4 +80,7 @@ pip install -r requirements.txt
 
 
 **버그, 질문, 의견** 등과 같은 모든 피드백은 이<u> **Repository에서 issue로 보고**</u>할 수 있다. 보고 후 조치 예정
-   
+   <br>
+<br>
+<br>
+
