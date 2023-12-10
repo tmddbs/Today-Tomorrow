@@ -21,44 +21,25 @@
 ## 🙋‍♀️ 설치 및 실행 방법 (원본 참고 추후 수정 예정) 
 ### Installation
 
-The repository can be included as a [Poetry](https://python-poetry.org/) dependency in `pyproject.toml`.
-It is best to integrate to a release tag to ensure a stable dependency:
-
-```toml
-[tool.poetry.dependencies]
-todoist-api-python = "^v2.0.0"
-```
-
-### Supported Python Versions
-
-Python 3.9 is fully supported and tested, and while it may work with other Python 3 versions, we do not test for them.
-
-### Usage
-
-An example of initializing the API client and fetching a user's tasks:
-
+1. 다운로드한 ZIP 파일을 압축 해제하고, 해당 디렉토리로 이동
 ```python
-from todoist_api_python.api_async import TodoistAPIAsync
-from todoist_api_python.api import TodoistAPI
-
-# Fetch tasks asynchronously
-async def get_tasks_async():
-    api = TodoistAPIAsync("YOURTOKEN")
-    try:
-        tasks = await api.get_tasks()
-        print(tasks)
-    except Exception as error:
-        print(error)
-
-# Fetch tasks synchronously
-def get_tasks_sync():
-    api = TodoistAPI("my token")
-    try:
-        tasks = api.get_tasks()
-        print(tasks)
-    except Exception as error:
-        print(error)
+cd "해당 디렉토리"
 ```
+2. 가상 환경을 생성  
+```python
+python -m venv venv
+
+venv\Scripts\activate
+```
+3. 필요한 패키지 설치
+```python
+pip install -r requirements.txt
+```
+4. 애플리케이션을 실행
+```python
+pip install -r requirements.txt
+``` 
+5. 웹 브라우저에서 "http://127.0.0.1:5000"에 접속하여 Today, Tomorrow를 사용할 수 있습니다!
 <br>
 
 ## 🛠 기능 설명   
