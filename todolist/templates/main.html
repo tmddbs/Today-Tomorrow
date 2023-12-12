@@ -9,29 +9,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+    {% block extra_styles %}{% endblock %}
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul class='flashes'>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-                </ul>
-    </div>
+{% block header %}
+    <section id="header">
+        <!-- 네비게이션 메뉴 -->
+         <nav id="nav">
+            <ul>
+                <li><a href="{{ url_for('views.task_list') }}">오늘의 할 일</a></li>
+                <li><a href="{{ url_for('views.task_list1') }}">이번 주의 할 일</a></li>
+                <li><a href="{{ url_for('views.task_list2') }}">이번 달의 할 일</a></li>
+            
+            </ul>
+        </nav>
+    </section>
 
-    <div class="container">
+    <script>
+        // 버튼 클릭 이벤트 핸들러
+        function handleClick(event) {
+            var buttonId = event.target.id;
+            var destination = '';
 
+            // 버튼에 따라 이동할 경로 설정
+            if (buttonId === 'button1') {
+                destination = 'main.html';
+            } else if (buttonId === 'button2') {
+                destination = 'main1.html';
+            } else if (buttonId === 'button3') {
+                destination = 'main2.html';
+            }
 
+            // 경로로 이동
+            window.location.href = destination;
+        }
 
-            {% endif %}
-        {% endwith %}
+        // 버튼 클릭 이벤트 등록
+        var button1 = document.getElementById('button1');
+        var button2 = document.getElementById('button2');
+        var button3 = document.getElementById('button3');
 
-        {% block content %}
-        {% endblock %}
-    </div>
+        button1.addEventListener('click', handleClick);
+        button2.addEventListener('click', handleClick);
+        button3.addEventListener('click', handleClick);
+    </script>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
 
 </body>
 </html>

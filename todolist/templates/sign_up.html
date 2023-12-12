@@ -1,5 +1,12 @@
 {% extends 'main.html' %}
-
+{% block extra_styles %}
+    <style>
+        /* 네비게이션 메뉴 숨기기 */
+        #nav {
+            display: none;
+        }
+    </style>
+{% endblock %}
 {% block content %}
 
 <div class="header-bar">

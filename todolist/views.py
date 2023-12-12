@@ -6,22 +6,6 @@ from . import db
 views = Blueprint('views', __name__)
 
 
-@views.route('/', methods=['GET', 'POST'])
-@login_required
-def task_list():
-    count = Task.query.filter_by(user_id=current_user.id, complete=False).count()
-    plural = True if count > 1 else False
-    tasks = current_user.tasks
-    search_input = ''
-
-    if request.method == "POST":
-        search = request.form.get('search-area')
-        search_input = search
-        result = Task.query.filter(Task.title.like(f'%{search}%'), Task.user_id == current_user.id).all()
-        tasks = result
-
-    return render_template("task_list.html", user=current_user, plural=plural, count=count, tasks=tasks,
-                           search_input=search_input)
 
 
 @views.route('/task-create', methods=['GET', 'POST'])
@@ -78,5 +62,57 @@ def task_update(id):
         return redirect(url_for("views.task_list"))
 
     return render_template("task_update.html", task=task)
+
+
+@views.route('/', methods=['GET', 'POST'])
+@login_required
+def task_list():
+    count = Task.query.filter_by(user_id=current_user.id, complete=False).count()
+    plural = True if count > 1 else False
+    tasks = current_user.tasks
+    search_input = ''
+
+    if request.method == "POST":
+        search = request.form.get('search-area')
+        search_input = search
+        result = Task.query.filter(Task.title.like(f'%{search}%'), Task.user_id == current_user.id).all()
+        tasks = result
+
+    return render_template("task_list.html", user=current_user, plural=plural, count=count, tasks=tasks,
+                           search_input=search_input)
+
+@views.route('/task_list1', methods=['GET', 'POST'])
+@login_required
+def task_list1():
+    count = Task.query.filter_by(user_id=current_user.id, complete=False).count()
+    plural = True if count > 1 else False
+    tasks = current_user.tasks
+    search_input = ''
+
+    if request.method == "POST":
+        search = request.form.get('search-area')
+        search_input = search
+        result = Task.query.filter(Task.title.like(f'%{search}%'), Task.user_id == current_user.id).all()
+        tasks = result
+
+    return render_template("task_list1.html", user=current_user, plural=plural, count=count, tasks=tasks,
+                           search_input=search_input)
+
+@views.route('/task_list2', methods=['GET', 'POST'])
+@login_required
+def task_list2():
+    count = Task.query.filter_by(user_id=current_user.id, complete=False).count()
+    plural = True if count > 1 else False
+    tasks = current_user.tasks
+    search_input = ''
+
+    if request.method == "POST":
+        search = request.form.get('search-area')
+        search_input = search
+        result = Task.query.filter(Task.title.like(f'%{search}%'), Task.user_id == current_user.id).all()
+        tasks = result
+
+    return render_template("task_list2.html", user=current_user, plural=plural, count=count, tasks=tasks,
+                           search_input=search_input)
 
 

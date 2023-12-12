@@ -1,15 +1,22 @@
 {% extends 'main.html' %}
+{% block extra_styles %}
+    <style>
+        /* 네비게이션 메뉴 숨기기 */
+        #nav {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
 
     <div class="header-bar">
-        <h1>Login</h1>
+        <h1>오늘, 내일</h1>
     </div>
 
     <div class="card-body">
         <form action="" method="post">
-
-
-            <label>Email Address:</label>
+            <label>ID:</label>
             <input type="email" name="email">
 
             <label>Password:</label>
@@ -20,6 +27,4 @@
         <p>Don't Have An Account? <a href="{{ url_for('auth.sign_up') }}">Register</a></p>
     </div>
 
-
 {% endblock %}
-

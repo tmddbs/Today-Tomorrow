@@ -4,7 +4,7 @@
 {% if current_user.is_authenticated %}
 <div class="header-bar">
         <div>
-            <h1>{{current_user.first_name|title}} 님의 오늘 할 일</h1>
+            <h1>{{current_user.first_name|title}} 님의 이번 달의 할 일</h1>
             <h3 style="margin:0">You have <i>{{ count }}</i> incomplete
                 {% if plural %}
                 tasks
@@ -50,7 +50,7 @@
             </div>
         {% else %}
         <h3 style="margin-left:10px;">No Items in List</h3>
-       
+        
         {% endfor %}
     </div>
 
