@@ -48,11 +48,9 @@ pip install -r requirements.txt
 <br>
 
 - 오늘의 할 일(체크 개수에 따라 점수 매기기)   
-
-- 오늘을 돌아보며(블로그 형식의 일기) – 오늘의 표정
-- 이번 주 / 이번 달 목표 (마감 기한 설정)
-- 오늘의 명언 (처음 시작 시 전시되도록)
-- 하지 못한 오늘의 할 일 미루기 or 삭제
+- 오늘을 돌아보며(블로그 형식의 일기)
+- 이번 주 / 이번 달 목표
+- 오늘의 명언 (처음 시작 시 랜덤으로 전시되도록)
 
 ### Flowchart
 
@@ -63,12 +61,11 @@ pip install -r requirements.txt
 ## 프로젝트 구조
 
 
-- 이 프로젝트는 'main.py', 'models.py', 'forms.py', 'routes.py', 'templates/', 'static/', 'venv/' 등의 파일들로 구성되어 있다. 
+- 이 프로젝트는 'main.py', 'models.py',  'views.py', 'templates/', 'static/', 'venv/' 등의 파일들로 구성되어 있다. 
 
 - `main.py` :  Flask 애플리케이션을 생성하고, 라우트를 등록하며, 서버를 실행
-- `models.py` : 데이터베이스 모델을 정의, SQLAlchemy를 사
-- `forms.py` :웹 폼을 정의하는 파일, WTForms 라이브러리를 사용
-- `routes.py` : Flask 애플리케이션의 라우트를 정의하는 파일
+- `models.py` : 데이터베이스 모델을 정의, SQLAlchemy를 사용
+- `views.py` : Flask 애플리케이션의 라우트를 정의하는 파일
 - `templates/` : HTML 템플릿 파일들이 위치
 - `static/` : 정적 파일들 (CSS, JavaScript, 이미지 등)이 위치하는 디렉토리
 - `venv/` : 가상 환경 디렉토리
