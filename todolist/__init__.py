@@ -4,6 +4,7 @@ from os import path
 import secrets
 from flask_login import LoginManager
 
+
 # SQLAlchemy 객체 생성
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -60,7 +61,7 @@ def create_app():
     @login_manager.user_loader
     def load_user(id):
         return User.query.get(int(id))
-
+   
     # Flask 애플리케이션 객체 반환
     return app
 

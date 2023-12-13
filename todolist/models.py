@@ -14,6 +14,7 @@ class Task(db.Model):
 
     def __repr__(self):
         return self.title  # 작업 객체를 문자열로 표현할 때 제목을 반환
+    
 
 
 class User(db.Model, UserMixin):
